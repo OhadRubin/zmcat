@@ -6,9 +6,11 @@ from time import sleep
 import sys
 import zmq
 
-
 if sys.version_info.major == 2:
-    inputf = raw_input  # noqa: F821
+    try:
+        inputf = raw_input  # noqa: F821
+    except:
+        inputf = input
 else:
     inputf = input
     unicode = str
